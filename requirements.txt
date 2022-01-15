@@ -1,0 +1,4 @@
+pylint=2.12.2
+pytest==6.2.5
+python-Levenshtein=0.12.2
+Metaphone==0.6

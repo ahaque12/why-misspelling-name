@@ -13,7 +13,7 @@ pylint/checkers directory if running from source.
 You can run the linter using
 
 ```bash
-$ pylint --load-plugins=alitheia-spell-checker test.py
+$ pylint --load-plugins=alitheia_spell_checker test.py
 ```
 
 ## Testing

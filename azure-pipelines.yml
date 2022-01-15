@@ -1,0 +1,24 @@
+---
+trigger:
+  branches:
+    exclude:
+      - '*'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - script: sudo apt-get install python3-pip
+    displayName: 'Install Python PIP'
+
+  - script: sudo apt-get install python3-setuptools
+    condition: succeeded()
+    displayName: Install Python SetupTools
+
+  - script: sudo pip3 install -r requirements.txt
+    condition: succeeded()
+    displayName: Install Python PIP Packages
+
+  - script: pylint --load-plugins alitheia_spell_checker sample.py
+    condition: succeeded()
+    displayName: Run alitheia spell check linter.

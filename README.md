@@ -13,7 +13,22 @@ pylint/checkers directory if running from source.
 You can run the linter using
 
 ```bash
-$ pylint --load-plugins=alitheia_spell_checker test.py
+$ pylint --load-plugins alitheia_spell_checker sample.py
+************* Module why-misspelling-name.sample
+sample.py:4:0: C1991: "alitheia" is misspelled. (alitheia-misspelling)
+sample.py:5:0: C1991: "alitheia" is misspelled. (alitheia-misspelling)
+
+----------------------------------------------------------------------
+Your code has been rated at -10.00/10 (previous run: -10.00/10, +0.00)
+```
+
+You can also run the specific function that implements checking an alitheia misspelling
+using `alitheia_spell_checker.alitheia_misspelling`.
+
+```python
+>>> from alitheia_spell_checker import alitheia_misspelling
+>>> alitheia_misspelling('aletheia')
+True
 ```
 
 ## Testing

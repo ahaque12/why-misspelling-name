@@ -1,7 +1,7 @@
 from pylint.testutils import CheckerTestCase, MessageTest
 import astroid
 
-from linter import alitheia_misspelling, misspelling_dict, \
+from alitheia_spell_checker import alitheia_misspelling, misspelling_dict, \
     misspelling_levenshtein, misspelling_phonetic, \
     AlitheiaSpellingLinter
 

@@ -1,3 +1,9 @@
+"""This module implements a spell checker for alitheia.
+"""
+
+__version__ = '0.1'
+__author__ = 'Adnan Haque'
+
 from typing import TYPE_CHECKING
 
 import re
@@ -27,10 +33,8 @@ class AlitheiaSpellingLinter(BaseChecker):
 
     name = 'alitheia-spell-checker'
 
-    UNSORTED_IMPORT_FROM = 'unsorted-import-from'
-
     msgs = {
-        'C1991': ('"%s" is misspelled. It should be spelled as "alitheia"',
+        'C1991': ('"alitheia" is misspelled.',
                   "alitheia-misspelling",
                   (
                       "Used when 'alitheia' is misspelled."
@@ -46,7 +50,7 @@ class AlitheiaSpellingLinter(BaseChecker):
         """
         with node.stream() as stream:
             for (lineno, line) in enumerate(stream):
-                for word in line:
+                for word in re.split(r'\W+', line.strip().decode()):
                     if isinstance(word, str):
                         if alitheia_misspelling(word):
                             self.add_message(
@@ -107,6 +111,11 @@ def valid_token(word: str) -> bool:
 
 def misspelling_dict(word: str) -> bool:
     """Identify if alitheia is misspelled using a dictionary.
+
+    Examples
+    --------
+    >>> misspelling_dict('alithea')
+    True
     """
     return word in MISSPELLING_DICT
 

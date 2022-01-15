@@ -1,2 +1,6 @@
+"""Sample module.
+"""
 
-alethea = 2
+
+# aletheia is great.
+ALETHEA = 2

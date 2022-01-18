@@ -6,6 +6,8 @@
 
 Code to support Munich Re Integrated Analytics blog post.
 
+<img src="https://user-images.githubusercontent.com/6743515/150034673-57986ff7-3e23-4c4c-884c-e1bf9c5f7c08.png" width="400px">
+
 ## Installation
 
 The module (linter.py) needs to be made available to pylint either by putting this module's
@@ -43,9 +45,9 @@ $ pytest --doctest-modules
 
 Performance of the linter can be tested using `timeit`. 
 ```python
-In [1]: import linter
+In [1]: import alitheia_spell_checker as asc
 
-In [2]: %timeit linter.alitheia_misspelling('aleetheia')
+In [2]: %timeit asc.alitheia_misspelling('aleetheia')
 16.7 µs ± 409 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 ```
 The implication is that a code base with 100k words would take 40ms to lint.

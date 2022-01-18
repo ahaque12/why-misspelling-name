@@ -19,6 +19,10 @@ steps:
     condition: succeeded()
     displayName: Install Python PIP Packages
 
+  - script: export PYTHONPATH=$PYTHONPATH:`pwd`
+    condition: succeeded()
+    displayName: Add current directory to PYTHONPATH.
+
   - script: pylint --load-plugins alitheia_spell_checker sample.py
     condition: succeeded()
     displayName: Run alitheia spell check linter.

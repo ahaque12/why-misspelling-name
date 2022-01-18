@@ -1,5 +1,8 @@
 # Why do you keep misspelling my name?
 
+![](https://shields.io/github/last-commit/ahaque12/why-misspelling-name)
+![](https://shields.io/tokei/lines/github/ahaque12/why-misspelling-name)
+
 Code to support Munich Re Integrated Analytics blog post.
 
 ## Installation

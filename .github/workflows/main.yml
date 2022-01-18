@@ -29,6 +29,7 @@ jobs:
         pip install -r requirements.txt
         export PYTHONPATH=$PYTHONPATH:`pwd`/
         pylint --load-plugins alitheia_spell_checker sample.py | sudo tee /tmp/alitheia-spell-check.txt
+        export SPELLING_ERRORS=`cat /tmp/alitheia-spell-check.txt | grep C1991 | wc -l`" spelling errors"
         pytest --doctest-modules --junitxml=junit/test-results.xml --cov-report=xml --cov-report=html
         
     - name: Upload pytest test results
@@ -44,4 +45,13 @@ jobs:
         name: spellcheck-results
         path: /tmp/alitheia-spell-check.txt
       if: ${{ always() }}
-    
+
+    - name: Update badge
+      uses: schneegans/dynamic-badges-action@v1.1.0
+      with:
+        auth: ${{ secrets.GIST_SECRET}}
+        gistID: 3c94642138181608e5b97f4eccec6da8
+        filename: alitheia-spell-check-badge.json
+        label: alitheia
+        message: ${{ env.SPELLING_ERRORS }}
+        COLOR: orange

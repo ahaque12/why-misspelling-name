@@ -2,6 +2,7 @@
 
 ![](https://shields.io/github/last-commit/ahaque12/why-misspelling-name)
 ![](https://shields.io/tokei/lines/github/ahaque12/why-misspelling-name)
+![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/ahaque12/3c94642138181608e5b97f4eccec6da8/raw/alitheia-spell-check-badge.json)
 
 Code to support Munich Re Integrated Analytics blog post.
 

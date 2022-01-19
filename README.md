@@ -10,9 +10,9 @@ Code to support Munich Re Integrated Analytics blog post.
 
 ## Installation
 
-The module (alitheia_spell_checker.py.py) needs to be made available to pylint either by putting this module's
-parent directory in your PYTHONPATH environment variable or by adding `alitheia_spell_checker.py.py` to the 
-pylint/checkers directory if running from source.
+The module (`alitheia_spell_checker.py`) needs to be made available to pylint either by putting this module's
+parent directory in your `$PYTHONPATH` environment variable or by adding `alitheia_spell_checker.py` to the 
+`pylint/checkers` directory if running from source.
 
 ## Running
 
